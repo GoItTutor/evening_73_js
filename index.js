@@ -96,7 +96,7 @@ const bmi = numericWeight / numericHeight ** 2;
 
 // console.log(Math.floor(bmi * 10) / 10);
 
-console.log(Number(bmi.toFixed(1)));
+console.log(bmi.toFixed(1));
 
 // console.log(bmi)
 
