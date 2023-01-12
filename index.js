@@ -1,117 +1,96 @@
+// 1. Що буде виведено у консоль ?
+
+console.log(10 >= "7");
+
+console.log("2" > "12");
+
+console.log("2" < "12");
+
+// console.log("4" == 4);
+
+// console.log("6" === 6);
+
+// console.log("false" === false);
+
+// console.log(1 == true);
+
+// console.log(1 === true);
+
+// console.log("0" == false);
+
+// console.log("0" === false);
+
+// console.log("Papaya" < "papaya");
+
+// console.log("Papaya" === "papaya");
+
+// console.log(undefined == null);
+
+// console.log(undefined === null);
+
 /*
-  Виведіть у консоль загальну кількість яблук та винограду та їх різницю
+  2. Використовуючи конструкцію if...else та prompt, напиши код, який 
+  запитуватиме: 'Який стандарт мови JavaScript?'. Якщо користувач вводить
+  ECMAScript, то показуй alert з рядком 'Вірно!', інакше - 'Не знаєте? ECMAScript!'
 */
 
-const apples = 47;
-
-const grapes = 135;
-
-const totalSum = apples + grapes;
-
-// console.log(totalSum);
-
-const difference = grapes - apples;
-
-// console.log(difference);
-
 /*
-  Заміни вираз перевизначення комбінованим оператором +=
+  3. Напиши скрипт, який приводить у консоль рядок 'Це додатнє число', якщо
+  в prompt користував ввів число більше за нуль. Якщо було введено нуль,
+  виводь у консоль рядок 'Це нуль'. Якщо передали від'ємне число, у консолі
+  має бути рядок 'Це від`ємне число'
 */
 
-let students = 100;
-
-// students = students + 50;
-students += 50;
-
-// console.log(students);
-
 /*
-  Розбери пріоритет операторів в інструкції присвоєння
+  4. Напиши скрипт, який перевіряє чи закінчується значення змінної link
+  символом '/'. Якщо ні, додай у кінець посилання цей символ  
 */
 
-const result = 108 + 223 - 2 * 5;
-
-// console.log(result);
+const link = "https://instagram.com/andrii_shevchukk";
 
 /*
-  Напиши скрипт, який виводить у консоль заокруглені значення value
+  5. Напиши скрипт для відображення дедлайну - часу здачі проєкту. Використовуй
+  конструкцію switch...case
 
-  Використовуй методи Math.round(), Math.floor(), Math.ceil()
-
-  Перевірте, що буде в консолі при значеннях 27.3 та 27.9
+  Якщо до дедлайну 0 днів - виведи рядок 'Cьогодні'
+  Якщо до дедлайну 1 день - виведи рядок 'Завтра'
+  Якщо до дедлайну 2 дні - виведи рядок 'Післязавтра'
+  Якщо до дедлайну 3+ днів - виведи рядок 'Можна відпочити :)'
 */
 
-const value = 27.9;
-
-const ceil = Math.ceil(value);
-const floor = Math.floor(value);
-const round = Math.round(value);
-
-// console.log(ceil, floor, round);
-
 /*
-  Склади за допомогою шаблонних рядків речення: A has B bots in stock,
-  де A та В - змінні вставлені в рядок
+  6. Напиши скрипт котрий порахує суму чисел від 1 до 10 та виведе у консоль результат 
 */
 
-const companyName = "Cyberdyne Systems";
+/*
+  7. Напиши цикл for який виводить у консоль браузера числа за зростанням від
+  min дo max, але якщо число кратне 5
+*/
 
-const repairBots = 150;
+const min = 20;
 
-const defenceBots = 50;
-
-const sentence = `${companyName} has ${repairBots + defenceBots} in stock`;
-
-const sentenceTwo =
-  companyName + " has " + (repairBots + defenceBots) + " in stock";
-
-// console.log(sentenceTwo);
+const max = 100;
 
 /*
-  Методи рядків та чейнінг
+  8. Напишіть скрипт який порахує скільки на проміжку від from до to було чисел,
+  які є кратними 7
+*/
 
-  Напиши скрипт, який розраховує індекс маси тіла людини
+/* 
+  9. Напишіть скрипт для світлофора, де користувач може ввести назву кольору
+  у prompt і в залежності від того який був введений колір відображатимуться
+  різні повідомлення через alert. Використовуй конструкцію switch case
+  
+  red - 'STOP!!!!'
 
-  Для цього потрібно розділити вагу в кілограмах на квадрат висоти у метрах
+  green - 'GO!'
 
-  Вага та висота зберігаються в змінних weight і height, але не як числа, а у вигляді рядків (спеціально для завдання)
+  yellow - 'Wait a little!'
+*/
 
-  Нецілі числа можуть бути задані у вигляді 24.7 або 24,7 тобто як роздільник дробної частини числа може бути кома
-
-  Індекс маси тіла необхідно округлити до однієї цифри після коми
-  */
-
-let weight = "88,3";
-let height = "1.98";
-
-const numericWeight = Number.parseFloat(weight.replace(",", "."));
-
-const numericHeight = Number.parseFloat(height.replace(",", "."));
-
-console.log(numericWeight);
-
-console.log(numericHeight);
-
-const bmi = numericWeight / numericHeight ** 2;
-
-// console.log(Math.floor(bmi * 10) / 10);
-
-console.log(bmi.toFixed(1));
-
-// console.log(bmi)
-
-// console.log(1 && 5); // true && true -> 5
-
-// console.log(5 && 1); // true && true -> 1
-
-// console.log(5 == "5");
-
-// const productName = "Repair droid";
-
-// console.log(productName.length);
-
-// console.log(productName.slice(0, 3));
-
-// "Repair droid"  Чому виводить не Repair droi?
-
-// console.log("100\n\n\n60");
+/*
+  10. Напиши скрипт який буде просити нас ввести число більше за 100, доки
+  ми таке не введемо
+    
+  Скористайся циклом while
+*/
