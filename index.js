@@ -264,6 +264,6 @@
 //   }
 // }
 
-const result = 9 > 7 ? `Більше` : "Менше";
+// const result = 9 > 7 ? `Більше` : "Менше";
 
-console.log(result);
+// console.log(result);
