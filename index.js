@@ -204,7 +204,7 @@
 
 // for (
 //   let num = Number(prompt("Write your number bigger than 100"));
-//   num > 100;
+//   num < 100;
 //   num = Number(prompt("Write your number bigger than 100"))
 // ) {}
 
