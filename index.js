@@ -1,106 +1,138 @@
 /*
-  1. Основи об'єктів:
-  
-  - Призначення
-  - Створення об'єктів
-  - Формат зберігання даних
-  - Додавання та зміна властивостей (різниця між . та [])
-  - Перебір for...in
+  1. Деструктуризація
+
+  Перепиши функцію так, щоб вона приймала один об'єкт параметрів
+  замість набору незалежних аргументів
 */
+
+// function calcBMI(weight, height) {
+//   const numericWeight = Number(weight.replace(',', '.'));
+//   const numericHeight = Number(height.replace(',', '.'));
+
+//   return Number((numericWeight / numericHeight ** 2).toFixed(1));
+// }
+
+// console.log(calcBMI('68,3', '1.65'));
+// console.log(calcBMI('118,3', '1.95'));
 
 /*
-  2. Напиши скрипт, який для об'єкта user послідовно:
-  
-  - Додає поле mood зі значенням 'happy'
-  - Замінює значення hobby на 'skydiving'
-  - Замінює значення premium на false
-  - Виводить вміст об'єкта user у форматі ключ: значення,
-    для цього скористайся Object.values()
+  2. Деструктуризація
+
+  Перепиши функцію так, щоб вона приймала один об'єкт параметрів
+  замість набору незалежних аргументів
 */
+
+// function printContactsInfo(names, phones) {
+//   const nameList = names.split(',');
+//   const phoneList = phones.split(',');
+
+//   for (let i = 0; i < nameList.length, i < phoneList.length; i += 1) {
+//     console.log(`${nameList[i]}: ${phoneList[i]}`);
+//   }
+// }
 
 /*
-  3. Метод Object.values()
+  3. Глибока деструктуризація
 
-  Є об'єкт, де зберігаються зарплати нашої команли. Напиши
-  Функцію getResult для підсумовування усіх зарплат.
-
-  Функція повинна отримувати об'єкт з інформацію про зарплати та
-  повертати загальну їх суму.
-
-  Якщо об'єкт salaries порожній, результат має бути 0 
+  Перепиши функцію так, щоб вона приймала один об'єкт параметрів
+  замість набору незалежних аргументів
 */
 
-// const salaries = {
-//   Andrii: 3000,
-//   Anna: 1200,
-//   Sofiya: 2000,
-// };
+// function getBotReport(companyName, repairBots, defenceBots) {
+//   return `${companyName} has ${repairBots + defenceBots} bots in stock`;
+// }
+
+// Було так:
+// console.log(getBotReport('Cyberdyne Systems', 150, 50))
+
+// Має стати так:
+// console.log(getBotReport({
+//     companyName: 'Cyberdyne Systems',
+//     bots: {
+//         repairBots: 150,
+//         defenceBots: 50,
+//     }
 
 /*
-  4. Масив об'єктів
+  4. Деструктуризація
 
-  Напишіть функцію calcTotalPrice(stones, stoneName), яка приймає
-  масив об'єктів та рядок з назвою каменю. 
-  
-  Функція рахує і повертає загальну вартість каміння з таким ім'ям, 
-  ціною та кількістю з об'єкта
+  Напиши функцію щоб вона приймала об'єкт параметрів із властивостями 
+  companyName і stock та виводила репорт про кількість товарів на 
+  складі будь-якої компанії.
 */
 
-// const stones = [
-//   { name: 'Смарагд', price: 1300, quantity: 4 },
-//   { name: 'Діамант', price: 2700, quantity: 3 },
-//   { name: 'Сапфір', price: 400, quantity: 7 },
-//   { name: 'Топаз', price: 500, quantity: 10 },
-//   { name: 'Аквамарин', price: 200, quantity: 8 },
-// ];
+// console.log(
+//     getStockReport({
+//         companyName: 'Cyberdyne Systems',
+//         stock: {
+//             repairBots: 150,
+//             defenceBots: 50,
+//         },
+//     }),
+// ); // "Cyberdyne Systems has 200 items in stock"
+
+// console.log(
+//     getStockReport({
+//         companyName: 'Belacci',
+//         stock: {
+//             shoes: 20,
+//             skirts: 10,
+//             hats: 5,
+//         },
+//     }),
+// ); // "Belacci has 35 item in stock"
+
+/* 
+  5. Spread
+  Доповни функцію createContact(partialContact) так, щоб вона повертала 
+  новий об'єкт контакту з доданою властивістю id, а також list зі 
+  значенням "default" якщо у partialContact немає такої властивості.
+*/
+
+// function createContact(partialContact) {
+// }
+
+// function generateId() {
+//     return '_' + Math.random().toString(36).substr(2, 9);
+// }
+
+// console.log(
+//     createContact({
+//         name: 'Mango',
+//         email: 'mango@mail.com',
+//         list: 'friends',
+//     }),
+// );
+// console.log(
+//     createContact({
+//         name: 'Poly',
+//         email: 'poly@hotmail.com',
+//     }),
+// );
 
 /*
-  5. Методи об'єкта
-  
-  Напиши скрипт управління особистим кабінетом інтернет-банку.
-  
-  Є об'єкт account, в якому необхідно реалізувати методи для роботи
-  з балансом та історією транзакцій
+  6. Rest
+  Напиши функцію transformUsername(user) так, щоб вона повертала новий 
+  об'єкт із властивістю fullName, замість firstName та lastName зі збережнням
+  усіх інших полів
 */
 
-// Типів транзакцій лише два:
-// Можна покзасти чи зняти гроші з рахунку
-const Transaction = {
-  DEPOSIT: 'deposit',
-  WITHDRAW: 'withdraw',
-};
+// console.log(
+//     transformUsername({
+//         id: 1,
+//         firstName: 'Jacob',
+//         lastName: 'Mercer',
+//         email: 'j.mercer@mail.com',
+//         friendCount: 40,
+//     }),
+// );
 
-const account = {
-  // Поточний баланс рахунку
-  balance: 0,
-
-  // Исторія транзакцій
-  transactions: [],
-
-  /*
-    Метод createTransaction створює та повертає об'єкт транзакції.
-
-    Приймає суму та тип транзакції.
-  */
-
-  /*
-    Метод deposit, що відповідає за додавання суми до балансу
-
-    Приймає суму транзакції
-
-    Викликає createTransaction для створення об'єкта транзакції
-    та додавання його в історію транзакцій
-  */
-
-  /*
-    Метод withdraw, що відповідає за зняття суми з балансу.
-
-    Приймає суму транзакції
-
-    Якщо сума зняття більша за поточний баланс, виводь повідомлення
-    про те, що зняття такої суми не можливо - недостатнє коштів
-    
-    Викликає createTransaction для створення об'єкта транзакції
-    та додавання його в історію транзакцій.
-  */
-};
+// console.log(
+//     transformUsername({
+//         id: 2,
+//         firstName: 'Adrian',
+//         lastName: 'Cross',
+//         email: 'a.cross@hotmail.com',
+//         friendCount: 20,
+//     }),
+// );
