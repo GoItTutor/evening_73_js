@@ -1,275 +1,106 @@
 /*
-  1. Приклади з областями видимості
+  1. Основи об'єктів:
+  
+  - Призначення
+  - Створення об'єктів
+  - Формат зберігання даних
+  - Додавання та зміна властивостей (різниця між . та [])
+  - Перебір for...in
 */
-
-// -------------------------------//
-
-// let a = 10;
-
-// if (true) {
-//   // const a = 5;
-//   // console.log(a);
-// }
-
-// {
-//   const a = 50;
-// }
-
-// console.log("in global", a);
-
-// ------------------------------//
-// const a = 10;
-
-// if (true) {
-//   let a = 5;
-//   a = 15;
-//   console.log("in local", a);
-// }
-
-// console.log("in global", a);
-
-// ------------------------------//
-// let a = 10;
-
-// if (true) {
-//   // let a = 100;
-//   a = 1;
-//   if (true) {
-//     let a = 25;
-//     a = 15;
-//   }
-// }
-
-// console.log("global", a);
-
-// const a = 5;
-
-// {
-//   // const a = 10;
-
-//   {
-//     // const a = 15;
-
-//   }
-// }
-
-// console.log(a);
-
-// ------------------------------//
-
-// const numbers = [1, 2, 3, 4, 5, 6, 7];
-
-// let total = 0;
-
-// for (const number of numbers) {
-//   total += number;
-//   console.log(total);
-// }
-
-// console.log(total);
-
-// const array = ["1", "2"];
-
-// {
-//   const array = ["вфвфі", "віфвфі"];
-
-//   // console.log(array);
-
-//   array[2] = `dadas`;
-//   console.log(array);
-// }
 
 /*
-  2. Створення та види функцій
+  2. Напиши скрипт, який для об'єкта user послідовно:
+  
+  - Додає поле mood зі значенням 'happy'
+  - Замінює значення hobby на 'skydiving'
+  - Замінює значення premium на false
+  - Виводить вміст об'єкта user у форматі ключ: значення,
+    для цього скористайся Object.values()
 */
 
-// function declaretion
+/*
+  3. Метод Object.values()
 
-// getSum(50);
+  Є об'єкт, де зберігаються зарплати нашої команли. Напиши
+  Функцію getResult для підсумовування усіх зарплат.
 
-// function getSum(number1 = 0, number2 = 0, number3 = 0) {
-//   // console.log(number1);
-//   // console.log(number2);
-//   // console.log(number3);
-//   // console.log(`sum is: ${number1 + number2 + number3}`);
+  Функція повинна отримувати об'єкт з інформацію про зарплати та
+  повертати загальну їх суму.
 
-//   console.log(1);
+  Якщо об'єкт salaries порожній, результат має бути 0 
+*/
 
-//   return number1 + number2 + number3;
-
-//   console.log(2);
-// }
-
-// getSum(60);
-
-// const sum1 = getSum(10, 20, 30);
-
-// console.log(sum1);
-
-// getSum(2, 7);
-// getSum(50, 7);
-// getSum(10);
-
-// function expression
-// викликається тільки після оголошення
-
-// const getSum = function (number1 = 0, number2 = 0, number3 = 0) {
-//   return number1 + number2 + number3;
+// const salaries = {
+//   Andrii: 3000,
+//   Anna: 1200,
+//   Sofiya: 2000,
 // };
 
-// getSum();
-
 /*
-  3. Псевдомасив arguments
+  4. Масив об'єктів
 
-  Написати функцію getSum, яка повертає суму переданих у неї
-  аргументів
-
-  Використати цикл for для вирішення задачі
-*/
-
-// function getSum() {
-//   let sum = 0;
-
-//   for (let number of arguments) {
-//     sum += number;
-//   }
-
-//   return sum;
-// }
-
-// console.log(getSum(10, 144, 300, 500, 600, 200));
-
-// const sum = getSum(10, 144, 300, 500, 600, 200);
-
-// console.log(sum);
-
-/*
-  4. Стек викликів
-
-  Розібрати роботу стеку викликів на прикладі функцій:
-*/
-
-// function foo() {
-//   console.log("start foo");
-//   console.log("end foo");
-// }
-
-// function boo() {
-//   console.log("start boo");
-//   foo();
-//   console.log("end boo");
-// }
-
-// boo();
-
-/*
-  5. Практичне завдання
-
-  Напишіть функції для роботи з колекцією навчальних курсів courses:
+  Напишіть функцію calcTotalPrice(stones, stoneName), яка приймає
+  масив об'єктів та рядок з назвою каменю. 
   
-  addCourse(name) - додає курс в кінець колекції, якщо раніше він не 
-  був доданий
-
-  removeCourse(name) - видаляє курс з колекції
-
-  updateCourse(oldName, newName) - замінює назву курсу на нову
+  Функція рахує і повертає загальну вартість каміння з таким ім'ям, 
+  ціною та кількістю з об'єкта
 */
 
-// const courses = ["python", "fullstack developer", "frontend developer"];
+// const stones = [
+//   { name: 'Смарагд', price: 1300, quantity: 4 },
+//   { name: 'Діамант', price: 2700, quantity: 3 },
+//   { name: 'Сапфір', price: 400, quantity: 7 },
+//   { name: 'Топаз', price: 500, quantity: 10 },
+//   { name: 'Аквамарин', price: 200, quantity: 8 },
+// ];
 
-// function addCourse(name) {
-//   if (!courses.includes(name)) {
-//     courses.push(name);
-//   }
-// }
+/*
+  5. Методи об'єкта
+  
+  Напиши скрипт управління особистим кабінетом інтернет-банку.
+  
+  Є об'єкт account, в якому необхідно реалізувати методи для роботи
+  з балансом та історією транзакцій
+*/
 
-// function removeCourse(name) {
-//   const courseIdx = courses.indexOf(name);
+// Типів транзакцій лише два:
+// Можна покзасти чи зняти гроші з рахунку
+const Transaction = {
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
+};
 
-//   if (courseIdx === -1) {
-//     return;
-//   }
+const account = {
+  // Поточний баланс рахунку
+  balance: 0,
 
-//   courses.splice(courseIdx, 1);
-// }
+  // Исторія транзакцій
+  transactions: [],
 
-// function updateCourse(oldName, newName) {
-//   const courseIdx = courses.indexOf(oldName);
+  /*
+    Метод createTransaction створює та повертає об'єкт транзакції.
 
-//   if (courseIdx === -1) {
-//     return;
-//   }
+    Приймає суму та тип транзакції.
+  */
 
-//   courses.splice(courseIdx, 1, newName);
-// }
+  /*
+    Метод deposit, що відповідає за додавання суми до балансу
 
-// console.log(courses);
+    Приймає суму транзакції
 
-// addCourse(`java`);
-// addCourse(`html`);
+    Викликає createTransaction для створення об'єкта транзакції
+    та додавання його в історію транзакцій
+  */
 
-// console.log(courses);
+  /*
+    Метод withdraw, що відповідає за зняття суми з балансу.
 
-// removeCourse("frontend developer");
+    Приймає суму транзакції
 
-// removeCourse("frontend developer");
-
-// console.log(courses);
-
-// updateCourse("python", "qa");
-
-// console.log(courses);
-
-// function getExtremeElements(array) {
-//   const result = [];
-//   result.push(array[0], array[array.length - 1]);
-//   return result;
-// }
-// console.log(getExtremeElements([1, 2, 3, 4, 5]));
-
-// function getExtremeElements(array) {
-//   const result = [];
-//   return result.push(array[0], array[array.length - 1]);
-// }
-
-// // console.log(getExtremeElements([1, 2, 3, 4, 5]));
-
-// const array = [1, 2];
-
-// const length = array.push(3, 4);
-
-// console.log(length);
-
-// const numbers = [1, 2, 3, 4, 5];
-
-// for (let number of numbers) {
-//   console.log(number);
-// }
-
-// function sayHi(name) {
-//   return `Hi, ${name}!`;
-// }
-
-// console.log(sayHi);
-// console.log(sayHi("Andrii"));
-
-// console.log(console.log(Math.random() * (10 - 1) + 1));
-
-// function findLongestWord(string) {
-//   let word = "";
-
-//   const arrayWords = string.split(" ");
-
-//   for (let phrase of arrayWords) {
-//     if (phrase.length > word.length) {
-//       word = phrase;
-//     }
-//   }
-
-//   return word;
-// }
-
-// const longestWord = findLongestWord("Welcome to the future");
-
-// console.log(longestWord);
+    Якщо сума зняття більша за поточний баланс, виводь повідомлення
+    про те, що зняття такої суми не можливо - недостатнє коштів
+    
+    Викликає createTransaction для створення об'єкта транзакції
+    та додавання його в історію транзакцій.
+  */
+};
