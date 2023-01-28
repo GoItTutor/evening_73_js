@@ -1,305 +1,227 @@
-/*
-  1. Коллбек функції
+// Колекція об'єктів для всіх прикладів з автомобілями
 
-  - Визначення та призначення
-
-  Напишіть такі функції:
-
-  createProduct(productData, callback) - приймає об'єкт товару без id, а 
-  також коллбек. Функція створює об'єкт товару, додаючи йому 
-  унікальний ідентифікатор як id і викликає коллбек передаючи йому 
-  створений об'єкт
-
-  logProduct(product) - коллбек, що приймає об'єкт товару і логує 
-  його у консоль
-
-  logTotalPrice(product) - коллбек, що приймає об'єкт товару і 
-  логує загальну вартість товару в консоль
-
-  Об'єкт товару має поля name, quantity та price
-
-  - Показати в якому порядку викликаються функції
-*/
-
-// Функція, що повертає випадкове значення id
-
-// function generateId() {
-//   return '_' + Math.random().toString(36).substr(2, 9);
-// }
-
-// function createProduct(productData, callback) {}
-
-// function logProduct(product) {}
-
-// function logTotalPrice(product) {}
-
-// createProduct(
-//   {
-//     name: '🍎',
-//     price: 30,
-//     quantity: 3,
-//   },
-//   logProduct
-// );
-
-// createProduct(
-//   {
-//     name: '🍋',
-//     price: 20,
-//     quantity: 5,
-//   },
-//   logTotalPrice
-// );
-
-/* 
-  2. Коллбек функції
-
-  Додайте об'єкту account методи:
-
-  withdraw(amount, onSuccess, onError) та deposit(amount, onSuccess, onError) 
-  де перший параметр це сума операції, а другий і третій - коллбеки,
-  які приймають текст повідомлення на успіх або помилку
-
-  Метод withdraw викликає onError якщо amount більше TRANSACTION_LIMIT 
-  або this.balance, в іншому випадку випадку викликає onSuccess та
-  зменшує баланс на переданий amount
-
-  Метод deposit викликає onError якщо amount більше TRANSACTION_LIMIT 
-  або меньше або дорівнює нулю, в іншому випадку випадку викликає onSuccess
-  та збільшує баланс на переданий amount
-*/
-
-// const TRANSACTION_LIMIT = 1000;
-
-// const account = {
-//   firstname: 'Andrii',
-//   lastname: 'Shevchuk',
-//   balance: 618,
-//   withdraw(amount, onSuccess, onError) {},
-//   deposit(amount, onSuccess, onError) {},
-// };
-
-// function handleSuccess(message) {
-//   console.log(`✅ Success! ${message}`);
-// }
-
-// function handleError(message) {
-//   console.log(`❌ Error! ${message}`);
-// }
-
-// account.withdraw(400, handleSuccess, handleError);
-// account.withdraw(400, handleSuccess, handleError);
-// account.withdraw(6000, handleSuccess, handleError);
-// account.deposit(1700, handleSuccess, handleError);
-// account.withdraw(300, handleSuccess, handleError);
-// account.deposit(0, handleSuccess, handleError);
-// account.deposit(-600, handleSuccess, handleError);
-// account.deposit(600, handleSuccess, handleError);
+const cars = [
+  {
+    make: 'Honda',
+    model: 'CR-V',
+    type: 'suv',
+    amount: 14,
+    price: 24045,
+    onSale: true,
+  },
+  {
+    make: 'Honda',
+    model: 'Accord',
+    type: 'sedan',
+    amount: 2,
+    price: 22455,
+    onSale: true,
+  },
+  {
+    make: 'Mazda',
+    model: 'Mazda 6',
+    type: 'sedan',
+    amount: 8,
+    price: 24195,
+    onSale: false,
+  },
+  {
+    make: 'Mazda',
+    model: 'CX-9',
+    type: 'suv',
+    amount: 7,
+    price: 31520,
+    onSale: true,
+  },
+  {
+    make: 'Toyota',
+    model: '4Runner',
+    type: 'suv',
+    amount: 19,
+    price: 34210,
+    onSale: false,
+  },
+  {
+    make: 'Toyota',
+    model: 'Sequoia',
+    type: 'suv',
+    amount: 16,
+    price: 45560,
+    onSale: false,
+  },
+  {
+    make: 'Toyota',
+    model: 'Tacoma',
+    type: 'truck',
+    amount: 4,
+    price: 24320,
+    onSale: true,
+  },
+  {
+    make: 'Ford',
+    model: 'F-150',
+    type: 'truck',
+    amount: 11,
+    price: 27110,
+    onSale: true,
+  },
+  {
+    make: 'Ford',
+    model: 'Fusion',
+    type: 'sedan',
+    amount: 13,
+    price: 22120,
+    onSale: true,
+  },
+  {
+    make: 'Ford',
+    model: 'Explorer',
+    type: 'suv',
+    amount: 6,
+    price: 31660,
+    onSale: false,
+  },
+];
 
 /*
-  3. Коллбек функції
+  1. Метод map
 
-  Напишіть функцію each(array, callback), яка першим параметром очікує масив
-  чисел, а другим - коллбек, який застосовується до кожного елемента масиву
-
-  Функція each повинна повернути новий масив, елементами якого будуть 
-  результати виклику коллбеку
+  Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів
 */
 
-// function each(array, callback) {}
+// const getModels = (arr) => {};
 
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return value * 2;
-//   })
-// );
-
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return value - 10;
-//   })
-// );
-
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return Math.sqrt(value);
-//   })
-// );
-
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.ceil(value);
-//   })
-// );
-
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.floor(value);
-//   })
-// );
+// console.log(cars);
+// console.log(getModels(cars));
 
 /*
-  4. Стрілочні функції
+  2. Метод map
 
-  - Для чого були вигадані
-  - Синтаксис залежно від кількості параметрів
-  - Явне/неявне повернення
-  - Різниця з function declaration (відсутність arguments та сплиття)
-
-  Перепишіть функцію getSum, слідуючи синтаксису стрілочних функцій
+  Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінeнним 
+  значенням властивості price залежно від переданої знижки
 */
 
-// function getSum(firstNumber, secondNumber) {
-//   return firstNumber + secondNumber;
-// }
+// const makeCarsWithDiscount = (cars, discount) => {};
+
+// console.table(cars);
+// console.table(makeCarsWithDiscount(cars, 2000));
 
 /*
-  5. Стрілочні функції
+  3. Метод filter
   
-  Перепишіть функції, слідуючи синтаксису стрілочних функцій
+  Нехай функція filterByPrice повертає масив автомобілів ціна яких менша за 
+  значення параметра threshold
 */
 
-// Функція, що повертає випадкове значення id
+// const filterByPrice = (cars, threshold) => {};
 
-// function generateId() {
-//   return '_' + Math.random().toString(36).substr(2, 9);
-// }
-
-// function createProduct(productData, callback) {
-//   const product = {
-//     ...productData,
-//     id: generateId(),
-//   };
-
-//   callback(product);
-// }
-
-// function logProduct(product) {
-//   console.log(product);
-// }
-
-// function logTotalPrice({ price, quantity }) {
-//   console.log(price * quantity);
-// }
-
-// createProduct(
-//   {
-//     name: '🍎',
-//     price: 30,
-//     quantity: 3,
-//   },
-//   logProduct
-// );
-
-// createProduct(
-//   {
-//     name: '🍋',
-//     price: 20,
-//     quantity: 5,
-//   },
-//   logTotalPrice
-// );
+// console.table(cars);
+// console.table(filterByPrice(cars, 30000));
+// console.table(filterByPrice(cars, 25000));
 
 /*
-  6. Стрілочні функції
+  4. Метод filter
+
+  Нехай функція getCarsOnSale повертає масив автомобілів властивість onSale яких true
+*/
+
+// const getCarsOnSale = (cars) => {};
+
+// console.table(cars);
+// console.table(getCarsOnSale(cars));
+
+/*
+  5. Метод filter
+
+  Нехай функція getCarsWithType повертає масив автомобілів, тип яких збігається 
+  зі значенням параметра type
+*/
+
+// const getCarsWithType = (cars, type) => {};
+
+// console.table(cars);
+// console.table(getCarsWithType(cars, 'suv'));
+// console.table(getCarsWithType(cars, 'sedan'));
+
+/*
+  6. Метод find
+
+  Нехай функція getCarByModel повертає об'єкт автомобіля властивість model
+  якого та параметр model однакові
+*/
+
+// const getCarByModel = (cars, model) => {};
+
+// console.log(getCarByModel(cars, 'F-150'));
+// console.log(getCarByModel(cars, 'CX-9'));
+
+/*
+  7. Метод sort
   
-  Перепишіть функції, слідуючи синтаксису стрілочних функцій
+  Нехай функція sortByAscendingAmount повертає НОВИЙ масив автомобілів відсортований 
+  за збільшенням значення властивості amount
 */
 
-// function each(array, callback) {
-//   const newArr = [];
+// const sortByAscendingAmount = (cars) => {};
 
-//   for (const el of array) {
-//     newArr.push(callback(el));
-//   }
-
-//   return newArr;
-// }
-
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return value * 2;
-//   })
-// );
-
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return value - 10;
-//   })
-// );
-
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return Math.sqrt(value);
-//   })
-// );
-
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.ceil(value);
-//   })
-// );
-
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.floor(value);
-//   })
-// );
+// console.table(cars);
+// console.table(sortByAscendingAmount(cars));
 
 /*
-  7. Метод forEach
+  8. Метод sort
 
-  - Призначення
-  - Сигнатура
+  Нехай функція sortByDescendingPrice повертає НОВИЙ масив автомобілів, відсортований 
+  за зменшенням значення властивості price
+*/
+
+// const sortByDescendingPrice = cars => {};
+
+// console.table(cars);
+// console.table(sortByDescendingPrice(cars));
+
+/*
+  9. Метод sort
+
+  Нехай функція sortByModel повертає НОВИЙ масив автомобілів відсортований за назвою 
+  моделі в алфавітному або зворотньому алфавітному порядку, залежно від значення параметра order
+
+  - localeCompare
+*/
+
+// const sortByModel = (cars, order) => {};
+
+// console.table(cars);
+// console.table(sortByModel(cars, 'asc'));
+// console.table(sortByModel(cars, 'desc'));
+
+/*
+  10. Метод reduce
+
+  Нехай функція getTotalAmount повертає загальну кількість автомобілів (значення властивостей amount)
+*/
+
+// const getTotalAmount = (cars) => {};
+
+// console.log(getTotalAmount(cars));
+
+/*
+  11. Ланцюжки методів
   
-  Перепишіть функцію, використовуючи метод forEach та стрілочні функції
+  Нехай функція getAvailableCarNames повертає масив моделей автомобілів, але тільки тих, що зараз на розпродажі.
 */
 
-// function logItems(items) {
-//   for (let index = 0; index < items.length; index += 1) {
-//     console.log(`${index + 1} - ${items[index]}`);
-//   }
-// }
+// const getAvailableCarNames = (cars) => {};
 
-// logItems(['Mango', 'Poly', 'Ajax']);
-// logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
+// console.log(getAvailableCarNames(cars));
 
 /*
-  8. Метод forEach
+  12. Ланцюжки методів
   
-  Перепишіть функцію, використовуючи метод forEach та стрілочні функції
+  Нехай функція getSortedCarsOnSale повертає назви моделей які знаходяться на продажі і мають тип кузова,
+  який ми передаємо у функцію, відсортованих в алфавітному порядку
 */
 
-// function printContactsInfo({ names, phones }) {
-//   const namesArray = names.split(',');
-//   const phonesArray = phones.split(',');
+// const getSortedCarsOnSale = (cars, type) => {};
 
-//   for (let i = 0; i < namesArray.length; i += 1) {
-//     console.log(`${namesArray[i]}: ${phonesArray[i]}`);
-//   }
-// }
-
-// printContactsInfo({
-//   names: 'Jacob,William,Solomon,Artem',
-//   phones: '89001234567,89001112233,890055566377, 890055558379',
-// });
-
-/*
-  9. Метод forEach
-
-  Перепишіть функцію, використовуючи метод forEach та стрілочні функції
-*/
-
-// function calculateAverage(...args) {
-//   let total = 0;
-
-//   for (let number of args) {
-//     total += number;
-//   }
-
-//   return total / args.length;
-// }
-
-// console.log(calculateAverage(1, 2, 3, 4)); // 2.5
-// console.log(calculateAverage(14, 8, 2)); // 8
-// console.log(calculateAverage(27, 43, 2, 8, 36)); // 23.2
+// console.table(cars);
+// console.log(getSortedCarsOnSale(cars, 'sedan'));
