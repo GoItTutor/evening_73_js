@@ -5,7 +5,7 @@
 
   Напишіть такі функції:
 
-  createProduct(productData, callback) - приймає об'єкт товару, а 
+  handleProduct(productData, callback) - приймає об'єкт товару, а 
   також коллбек. Функція викликає коллбек передаючи йому 
   об'єкт 
 
@@ -20,13 +20,13 @@
   - Показати в якому порядку викликаються функції
 */
 
-// function createProduct(productData, callback) {}
+// function handleProduct(productData, callback) {}
 
 // function logProduct(product) {}
 
 // function logTotalPrice(product) {}
 
-// createProduct(
+// handleProduct(
 //   {
 //     name: '🍎',
 //     price: 30,
@@ -35,7 +35,7 @@
 //   logProduct
 // );
 
-// createProduct(
+// handleProduct(
 //   {
 //     name: '🍋',
 //     price: 20,
