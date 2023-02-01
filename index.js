@@ -152,18 +152,7 @@
   Перепишіть функції, слідуючи синтаксису стрілочних функцій
 */
 
-// Функція, що повертає випадкове значення id
-
-// function generateId() {
-//   return '_' + Math.random().toString(36).substr(2, 9);
-// }
-
-// function createProduct(productData, callback) {
-//   const product = {
-//     ...productData,
-//     id: generateId(),
-//   };
-
+// function handleProduct(productData, callback) {
 //   callback(product);
 // }
 
@@ -175,7 +164,7 @@
 //   console.log(price * quantity);
 // }
 
-// createProduct(
+// handleProduct(
 //   {
 //     name: '🍎',
 //     price: 30,
@@ -184,7 +173,7 @@
 //   logProduct
 // );
 
-// createProduct(
+// handleProduct(
 //   {
 //     name: '🍋',
 //     price: 20,
