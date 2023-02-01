@@ -10,7 +10,7 @@
   об'єкт 
 
   logProduct(product) - коллбек, що приймає об'єкт товару і логує 
-  його у консоль
+  його у консоль 
 
   logTotalPrice(product) - коллбек, що приймає об'єкт товару і 
   логує загальну вартість товару в консоль
@@ -20,20 +20,17 @@
   - Показати в якому порядку викликаються функції
 */
 
-// function handleProduct(productData, callback) {}
+// function handleProduct(product, callback) {
+//   callback(product);
+// }
 
-// function logProduct(product) {}
+// function logProduct(product) {
+//   console.log(product);
+// }
 
-// function logTotalPrice(product) {}
-
-// handleProduct(
-//   {
-//     name: '🍎',
-//     price: 30,
-//     quantity: 3,
-//   },
-//   logProduct
-// );
+// function logTotalPrice(product) {
+//   console.log(product.price * product.quantity);
+// }
 
 // handleProduct(
 //   {
@@ -42,6 +39,15 @@
 //     quantity: 5,
 //   },
 //   logTotalPrice
+// );
+
+// handleProduct(
+//   {
+//     name: '🍎',
+//     price: 30,
+//     quantity: 3,
+//   },
+//   logProduct
 // );
 
 /* 
@@ -68,8 +74,36 @@
 //   firstname: 'Andrii',
 //   lastname: 'Shevchuk',
 //   balance: 618,
-//   withdraw(amount, onSuccess, onError) {},
-//   deposit(amount, onSuccess, onError) {},
+//   withdraw(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT) {
+//       onError(
+//         `Cума зняття є більшою за ліміт транзакцій, залишок - ${this.balance}`
+//       );
+//     } else if (amount > this.balance) {
+//       onError(
+//         `Cума зняття є більшою ніж є на балансі, залишок - ${this.balance}`
+//       );
+//     } else {
+//       this.balance -= amount;
+
+//       onSuccess(`Операція зняття відбулась успішно, залишок - ${this.balance}`);
+//     }
+//   },
+//   deposit(amount, onSuccess, onError) {
+//     if (amount > TRANSACTION_LIMIT) {
+//       onError(
+//         `Cума поповнення є більшою за ліміт транзакцій, залишок - ${this.balance}`
+//       );
+//     } else if (amount <= 0) {
+//       onError(
+//         `Cума поповнення є меншою або рівна нулю, залишок - ${this.balance}`
+//       );
+//     } else {
+//       this.balance += amount;
+
+//       onSuccess(`Поповнення відбулось успішно, залишок - ${this.balance}`);
+//     }
+//   },
 // };
 
 // function handleSuccess(message) {
@@ -99,7 +133,17 @@
   результати виклику коллбеку
 */
 
-// function each(array, callback) {}
+// function each(array, callback) {
+//   const resultArray = [];
+
+//   for (let number of array) {
+//     const newValue = callback(number);
+
+//     resultArray.push(newValue);
+//   }
+
+//   return resultArray;
+// }
 
 // console.log(
 //   each([64, 49, 36, 25, 16], function (value) {
@@ -142,9 +186,27 @@
   Перепишіть функцію getSum, слідуючи синтаксису стрілочних функцій
 */
 
-// function getSum(firstNumber, secondNumber) {
+// function getSum1(firstNumber, secondNumber) {
 //   return firstNumber + secondNumber;
 // }
+
+// const getSum2 = function (firstNumber, secondNumber) {
+//   return firstNumber + secondNumber;
+// };
+
+// const getSum3 = (firstNumber, secondNumber) => {
+//   return firstNumber + secondNumber;
+// };
+
+// const getSum4 = (firstNumber, secondNumber) => firstNumber + secondNumber;
+
+// console.log(getSum3(5353, 434));
+
+// const sayHi = () => {
+//   console.log('аівавіфвіфвф');
+// };
+
+// sayHi();
 
 /*
   5. Стрілочні функції
@@ -152,17 +214,17 @@
   Перепишіть функції, слідуючи синтаксису стрілочних функцій
 */
 
-// function handleProduct(productData, callback) {
-//   callback(product);
-// }
+// const handleProduct = (productData, callback) => {
+//   callback(productData);
+// };
 
-// function logProduct(product) {
+// const logProduct = (product) => {
 //   console.log(product);
-// }
+// };
 
-// function logTotalPrice({ price, quantity }) {
+// const logTotalPrice = ({ price, quantity }) => {
 //   console.log(price * quantity);
-// }
+// };
 
 // handleProduct(
 //   {
@@ -188,7 +250,7 @@
   Перепишіть функції, слідуючи синтаксису стрілочних функцій
 */
 
-// function each(array, callback) {
+// const each = (array, callback) => {
 //   const newArr = [];
 
 //   for (const el of array) {
@@ -196,7 +258,7 @@
 //   }
 
 //   return newArr;
-// }
+// };
 
 // console.log(
 //   each([64, 49, 36, 25, 16], function (value) {
@@ -204,29 +266,15 @@
 //   })
 // );
 
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return value - 10;
-//   })
-// );
+// console.log(each([64, 49, 36, 25, 16], (value) => value * 2));
 
-// console.log(
-//   each([64, 49, 36, 25, 16], function (value) {
-//     return Math.sqrt(value);
-//   })
-// );
+// console.log(each([64, 49, 36, 25, 16], (value) => value - 10));
 
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.ceil(value);
-//   })
-// );
+// console.log(each([64, 49, 36, 25, 16], (value) => Math.sqrt(value)));
 
-// console.log(
-//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
-//     return Math.floor(value);
-//   })
-// );
+// console.log(each([1.5, 2.1, 16.4, 9.7, 11.3], (value) => Math.ceil(value)));
+
+// console.log(each([1.5, 2.1, 16.4, 9.7, 11.3], (value) => Math.floor(value)));
 
 /*
   7. Метод forEach
@@ -238,9 +286,13 @@
 */
 
 // function logItems(items) {
-//   for (let index = 0; index < items.length; index += 1) {
-//     console.log(`${index + 1} - ${items[index]}`);
-//   }
+//   // for (let index = 0; index < items.length; index += 1) {
+//   //   console.log(`${index + 1} - ${items[index]}`);
+//   // }
+
+//   items.forEach((element, index) => {
+//     console.log(`${index + 1} - ${element}`);
+//   });
 // }
 
 // logItems(['Mango', 'Poly', 'Ajax']);
@@ -252,14 +304,20 @@
   Перепишіть функцію, використовуючи метод forEach та стрілочні функції
 */
 
-// function printContactsInfo({ names, phones }) {
+// const printContactsInfo = ({ phones, names }) => {
 //   const namesArray = names.split(',');
 //   const phonesArray = phones.split(',');
 
-//   for (let i = 0; i < namesArray.length; i += 1) {
-//     console.log(`${namesArray[i]}: ${phonesArray[i]}`);
-//   }
-// }
+//   // for (let i = 0; i < namesArray.length; i += 1) {
+//   //   console.log(`${namesArray[i]}: ${phonesArray[i]}`);
+//   // }
+
+//   console.log(namesArray);
+
+//   namesArray.forEach((name, i) => {
+//     console.log(`${name} - ${phonesArray[i]}`);
+//   });
+// };
 
 // printContactsInfo({
 //   names: 'Jacob,William,Solomon,Artem',
@@ -272,16 +330,30 @@
   Перепишіть функцію, використовуючи метод forEach та стрілочні функції
 */
 
-// function calculateAverage(...args) {
+// const calculateAverage = (...args) => {
 //   let total = 0;
 
-//   for (let number of args) {
+//   // for (let number of args) {
+//   //   total += number;
+//   // }
+
+//   args.forEach((number) => {
 //     total += number;
-//   }
+//   });
 
 //   return total / args.length;
-// }
+// };
 
 // console.log(calculateAverage(1, 2, 3, 4)); // 2.5
 // console.log(calculateAverage(14, 8, 2)); // 8
 // console.log(calculateAverage(27, 43, 2, 8, 36)); // 23.2
+
+// сори что не по теме. почему результат 7? если 7*6 это строка..
+
+// (value => value > 3);
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// const filteredNumbers = numbers.filter(value => value > 3);
+
+// console.log(filteredNumbers); // [4, 5]
