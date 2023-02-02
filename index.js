@@ -170,18 +170,6 @@ const cars = [
 /*
   8. Метод sort
 
-  Нехай функція sortByDescendingPrice повертає НОВИЙ масив автомобілів, відсортований 
-  за зменшенням значення властивості price
-*/
-
-// const sortByDescendingPrice = cars => {};
-
-// console.table(cars);
-// console.table(sortByDescendingPrice(cars));
-
-/*
-  9. Метод sort
-
   Нехай функція sortByModel повертає НОВИЙ масив автомобілів відсортований за назвою 
   моделі в алфавітному або зворотньому алфавітному порядку, залежно від значення параметра order
 
@@ -195,7 +183,7 @@ const cars = [
 // console.table(sortByModel(cars, 'desc'));
 
 /*
-  10. Метод reduce
+  9. Метод reduce
 
   Нехай функція getTotalAmount повертає загальну кількість автомобілів (значення властивостей amount)
 */
@@ -205,7 +193,7 @@ const cars = [
 // console.log(getTotalAmount(cars));
 
 /*
-  11. Ланцюжки методів
+  10. Ланцюжки методів
   
   Нехай функція getAvailableCarNames повертає масив моделей автомобілів, але тільки тих, що зараз на розпродажі.
 */
@@ -213,15 +201,3 @@ const cars = [
 // const getAvailableCarNames = (cars) => {};
 
 // console.log(getAvailableCarNames(cars));
-
-/*
-  12. Ланцюжки методів
-  
-  Нехай функція getSortedCarsOnSale повертає назви моделей які знаходяться на продажі і мають тип кузова,
-  який ми передаємо у функцію, відсортованих в алфавітному порядку
-*/
-
-// const getSortedCarsOnSale = (cars, type) => {};
-
-// console.table(cars);
-// console.log(getSortedCarsOnSale(cars, 'sedan'));
