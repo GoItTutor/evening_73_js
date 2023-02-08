@@ -28,17 +28,25 @@ const user1 = {
   },
 };
 
+// user1.showThis();
+
+// user1.sayHi();
+
+// user1.sayFromWhere();
+
 const user2 = {
   name: 'Andrii',
   age: 30,
   city: 'Lviv',
 
-  // showThis: user1.showThis
+  showThis: user1.showThis,
 
   // sayHi: user1.sayHi
 
   // sayFromWhere: user1.sayFromWhere
 };
+
+// user2.showThis();
 
 /*
   2. Значення this залежно від місця звернення
@@ -56,7 +64,12 @@ const user2 = {
 //   console.log(this);
 // }
 
-// showThis();
+// const user = {
+//   name: 'Anna',
+//   showThis,
+// };
+
+// user.showThis();
 
 // this в callback-функціях
 
@@ -67,7 +80,21 @@ const user2 = {
 //   getFullName() {
 //     return `${this.firstName} ${this.lastName}`;
 //   },
+
+//   showThis(name, age) {
+//     console.log(this);
+//     console.log(name);
+//     console.log(age);
+//   },
 // };
+
+// console.log(user.getFullName());
+
+// function HOF(callback, ...args) {
+//   callback(...args);
+// }
+
+// HOF(user.showThis, 'Vitaliy', 50);
 
 // function makeInvoice(callback) {
 //   console.log(`Обробляємо заявку від ${callback()}.`);
@@ -84,6 +111,16 @@ const user2 = {
 
 // showThis();
 
+// const user = {
+//   age: 50,
+//   city: 'Dnipro',
+//   showThis: () => {
+//     console.log(this);
+//   },
+// };
+
+// user.showThis();
+
 // 2.
 
 // const data = {
@@ -91,6 +128,8 @@ const user2 = {
 //   extensions: ['.pdf', '.txt', '.html'],
 
 //   showDate() {
+//     console.log(this);
+
 //     const arrowFunc = () => {
 //       console.log(this.date);
 //     };
@@ -108,6 +147,10 @@ const user2 = {
 // Метод call
 
 // function getData() {
+//   if (!('username' in this) && !('age' in this)) {
+//     return;
+//   }
+
 //   console.log(`${this.username} is ${this.age} years old.`);
 // }
 
@@ -120,6 +163,16 @@ const user2 = {
 //   username: 'Anatoliy',
 //   age: 33,
 // };
+
+// const auto = {
+//   wheels: 4,
+// };
+
+// debugger;
+
+// getData.call(userFirst);
+// getData.call(userSecond);
+// getData.call(auto);
 
 // Метод apply
 
@@ -137,6 +190,8 @@ const user2 = {
 //   age: 35,
 // };
 
+// greetGuest.apply(secondUser, ['Hello']);
+
 // Метод bind
 
 // const fordAuto = {
@@ -147,6 +202,12 @@ const user2 = {
 //   getInfo() {
 //     console.log(`${this.make} ${this.mark} has ${this.wheels} wheels`);
 //   },
+
+//   props: {
+//     showThis() {
+//       console.log(this);
+//     },
+//   },
 // };
 
 // const bogdanAuto = {
@@ -154,9 +215,18 @@ const user2 = {
 //   mark: 'Bogdan',
 // };
 
-// const getInfo = fordAuto.getInfo;
+// fordAuto.props.showThis();
 
-// getInfo()
+// const getInfo = fordAuto.getInfo.bind(fordAuto).bind(bogdanAuto);
+
+// getInfo();
+// getInfo.call(bogdanAuto);
+// getInfo();
+// getInfo();
+
+// console.log(getInfo === fordAuto.getInfo);
+
+// getInfo();
 
 /*
   4. Калькулятор
@@ -171,7 +241,27 @@ const user2 = {
 // const calculator = {
 //   a: 0,
 //   b: 0,
+
+//   write(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+
+//   getSum() {
+//     return this.a + this.b;
+//   },
+
+//   getMulti() {
+//     return this.a * this.b;
+//   },
 // };
+
+// calculator.write(500, 700);
+
+// console.log(calculator.getSum());
+// console.log(calculator.getMulti());
+
+// console.log(calculator);
 
 /*
   5. Це ladder (драбина) – об'єкт, який дозволяє підніматись вгору
@@ -186,7 +276,27 @@ const user2 = {
 
 // const ladder = {
 //   step: 0,
+
+//   up() {
+//     this.step += 1;
+//   },
+
+//   down() {
+//     this.step -= 1;
+//   },
+
+//   showStep() {
+//     console.log(this.step);
+//   },
 // };
+
+// ladder.up();
+// ladder.up();
+// ladder.up();
+// ladder.up();
+// ladder.down();
+
+// ladder.showStep();
 
 /* 
   Змініть код методів up, down та showStep таким чином, щоб 
@@ -194,6 +304,28 @@ const user2 = {
 
   ladder.up().up().down().showStep()
 */
+
+// const ladder = {
+//   step: 0,
+
+//   up() {
+//     this.step += 1;
+
+//     return this;
+//   },
+
+//   down() {
+//     this.step -= 1;
+
+//     return this;
+//   },
+
+//   showStep() {
+//     console.log(this.step);
+//   },
+// };
+
+// ladder.up().up().up().down().showStep();
 
 /*
   6. Напишіть метод calcTotalPrice(stoneName), який приймає назву
@@ -208,7 +340,21 @@ const user2 = {
 //     { name: 'Sapphire', price: 1400, quantity: 7 },
 //     { name: 'Ruby', price: 800, quantity: 2 },
 //   ],
+
+//   calcTotalPrice(stoneName) {
+//     const stoneObj = this.stones.find(
+//       ({ name }) => name.toLowerCase() === stoneName.trim().toLowerCase()
+//     );
+
+//     if (!stoneObj) {
+//       return `Каміння з назвою ${stoneName} не має!`;
+//     }
+
+//     const { price, quantity } = stoneObj;
+
+//     return price * quantity;
+//   },
 // };
 
 // console.log(chopShop.calcTotalPrice('Emerald')); // 5200
-// console.log(chopShop.calcTotalPrice('Diamond')); // 8100
+// console.log(chopShop.calcTotalPrice('DiaMoNd')); // 8100
