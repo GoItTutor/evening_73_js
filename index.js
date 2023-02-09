@@ -25,7 +25,7 @@
 
 // 1
 // const mango = new Blogger({
-//   name: 'mango@mail.com',
+//   email: 'mango@mail.com',
 //   age: 24,
 //   numberOfPosts: 20,
 //   topics: ['tech', 'cooking'],
@@ -41,7 +41,7 @@
 
 // 2
 // const poly = new Blogger({
-//   name: 'poly@mail.com',
+//   email: 'poly@mail.com',
 //   age: 19,
 //   numberOfPosts: 17,
 //   topics: ['sports', 'gaming', 'health'],
