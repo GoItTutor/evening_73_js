@@ -5,37 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/event-listener.css" />
   </head>
   <body>
     <div class="container">
-      <h1 class="main-title" id="title">Title</h1>
-
-      <p class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dolores
-        illum maxime quaerat voluptatem vitae expedita sequi, dolor debitis
-        voluptates doloremque, doloribus minima odio tempora tempore. A aliquam
-        velit adipisci!
-      </p>
-
-      <ul class="list">
-        <li class="list__item">
-          <a href="#" class="list__link">link-1</a>
-        </li>
-
-        <li class="list__item">
-          <a href="#" class="list__link">link-2</a>
-        </li>
-      </ul>
-
       <img
-        title="image"
         src="https://picsum.photos/id/237/200/300"
         alt="Labrador"
-        class="some-img"
+        class="js-img"
       />
+      <ul class="btn-wrapper list">
+        <li class="btn-item">
+          <button type="button" class="btn js-swap-btn">
+            Змінити зображення
+          </button>
+        </li>
+        <li class="btn-item">
+          <button type="button" class="btn js-remove-listener">
+            Прибрати слухача події
+          </button>
+        </li>
+      </ul>
     </div>
 
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
