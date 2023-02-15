@@ -1,286 +1,219 @@
-/*
-  1. Блогер
-
-  Поняття клас та екземпляр, визначення, призначення
-
-  Прототипне наслідування в інстансів класу
-
-  Напиши клас Blogger для створення об'єкта блогера з 
-  наступними властивостями:
-
-  email - пошта, рядок
-  age - вік, число
-  numberOfPosts - кількість постів, число
-  topics - масив тем, на яких спеціалізується блогер
-
-  Клас очікує один параметр – об'єкт налаштувань з 
-  однойменними властивостями.
-
-  Додай метод getInfo(), який повертає рядок: 
-  User ${пошта} is ${вік} years old and has ${у постів} posts
-
-  Додай метод updatePostCount(value), який у параметрі value 
-  приймає кількість постів, які потрібно додати користувачеві
-*/
-
-// class Blogger {
-//   name = `YouTube blogger`;
-
-//   constructor({ email, age, numberOfPosts, topics }) {
-//     this.email = email;
-//     this.age = age;
-//     this.numberOfPosts = numberOfPosts;
-//     this.topics = topics;
-//   }
-
-//   getInfo() {
-//     return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts}`;
-//   }
-
-//   updatePostCount(value) {
-//     this.numberOfPosts += value;
-//   }
-// }
-
-// const obj = new Blogger();
-
-// console.log(obj);
-
-// const obj = {};
-
-// console.log(obj);
-// console.log(obj.toString());
+'use strict';
 
 // 1
-// const mango = new Blogger({
-//   email: 'mango@mail.com',
-//   age: 24,
-//   numberOfPosts: 20,
-//   topics: ['tech', 'cooking'],
-//   fsdfdsfdsfds: 553535,
-// });
 
-// console.log(mango);
+// let counter = 0;
 
-// console.log(mango.getInfo());
+// function makeBigger() {
+//   counter += 1;
+// }
 
-// mango.updatePostCount(5);
+// makeBigger();
+// makeBigger();
+// makeBigger();
+// makeBigger();
 
-// console.log(mango.getInfo());
+// {
+//   let counter = 0;
+
+//   makeBigger();
+
+//   console.log(counter);
+// }
+
+// console.log(counter);
 
 // 2
-// const poly = new Blogger({
-//   email: 'poly@mail.com',
-//   age: 19,
-//   numberOfPosts: 17,
-//   topics: ['sports', 'gaming', 'health'],
-// });
 
-// console.log(poly);
-
-// console.log(poly.getInfo());
-
-// poly.updatePostCount(4);
-
-// console.log(poly.getInfo());
-
-/*
-  2. Сховище
- 
-  Напиши клас Storage, який створює об'єкти для управління складом товарів. При виклику отримуватиме один аргумент - початковий масив товарів, і записуватиме його у властивість items
-
-  Додай методи класу:
-
-  getItems() – повертає масив товарів
-
-  addItem(item) - отримує новий товар та додає його до поточних
-*/
-
-// class Storage {
-//   constructor(items) {
-//     this.items = items;
-//   }
-
-//   getItems() {
-//     return this.items;
-//   }
-
-//   addItem(item) {
-//     this.items.push(item);
-//   }
-// }
-
-// const coursesStorage = new Storage(['HTML', 'JS', 'CSS']);
-// console.log(coursesStorage);
-
-// console.table(coursesStorage.getItems());
-
-// coursesStorage.addItem('🍌');
-// console.log(coursesStorage.getItems());
-
-/*
-  3. User
-
-  Приватні властивості
-  
-  Напиши клас User який створює об'єкт із властивостями login та email
-  
-  Оголоси приватні властивості #login та #email, доступ до яких зроби через геттер та сеттер login та email
-*/
-
-// class User {
-//   #login;
-//   #email;
-
-//   constructor(props) {
-//     const { login, email } = props;
-
-//     this.#email = email;
-//     this.#login = login;
-//   }
-
-//   get login() {
-//     return this.#login;
-//   }
-
-//   set login(value) {
-//     this.#login = value;
-//   }
-
-//   get email() {
-//     return this.#email;
-//   }
-
-//   set email(value) {
-//     this.#email = value;
-//   }
-// }
-
-// const mango = new User({
-//   login: 'Mango',
-//   email: 'mango@dog.woof',
-// });
-
-// // mango.#email = 32311;
-
-// console.log(mango);
-// console.log(mango.login);
-
-// mango.login = `dasdsadas`;
-
-// console.log(mango);
-
-/*
-  4. Нотатки
-
-  Статичні властивості
-
-  Напиши клас Notes, який управляє колекцією нотаток у властивості items. Нотатка це об'єкт із властивостями text та priority. Додай класу статичну властивість Priority, у якій зберігатиметься об'єкт із пріоритетами.
-
-  {
-    LOW: 'low',
-    NORMAL: 'normal',
-    HIGH: 'high'
-  }
-  
-  Додай метод addNote(note) для додавання нотатки
-*/
-
-// class Notes {
-//   static Priority = {
-//     LOW: 'low',
-//     NORMAL: 'normal',
-//     HIGH: 'high',
-//   };
-
-//   static number = 4242;
-
-//   constructor(notes) {
-//     this.items = notes;
-//   }
-
-//   addNote(note) {
-//     this.items.push(note);
-//   }
-
-//   getNumber() {
-//     console.log(Notes.number);
-//   }
-// }
-
-// const myNotes = new Notes([]);
-
-// myNotes.getNumber();
-
-// console.log(Notes.Priority);
-// console.log(Notes.number);
-
-// myNotes.addNote({
-//   text: 'Моя перша нотатка',
-//   priority: Notes.Priority.LOW,
-// });
-
-// myNotes.addNote({
-//   text: 'Моя друга нотатка',
-//   priority: Notes.Priority.HIGH,
-// });
-
-// console.log(myNotes.items);
-
-// console.dir(Array.from('вфвфвфі'));
-
-// console.log([]);
-
-/*
-  5. Прототипне наслідування детальніше
-
-  Метод Object.create
-
-  Власні/невласні властивості, перебір циклом for in
-  та метод hasOwnProperty
-*/
-
-// const obj1 = {
-//   a: 1,
-//   b: 2,
+// const user = {
+//   name: 'Andrii',
 // };
 
-// const obj2 = Object.create(obj1);
+// user.username = user.name;
 
-// obj2.c = 55;
-
-// for (let key in obj2) {
-//   if (obj2.hasOwnProperty(key)) {
-//     console.log(key);
-//   }
-// }
-
-// console.log(Object.values(obj2));
-
-// class User {
-//   name = `dasdas`;
-
-//   method = () => {
-//     console.log(this.name);
-//   };
-// }
-
-// const user = new User();
-
-// user.method();
-
-// class User1 {
-//   username = 1313113;
-// }
-
-// class User2 extends User1 {
-//   name = 31131;
-// }
-
-// const user = new User2();
+// delete user.name;
 
 // console.log(user);
 
-// function User(name) {
-//   this.name = name
+// 3
+
+// const user = {};
+
+// user.name = 'Vitaliy';
+
+// const key = 'age';
+
+// user[key + `Value`] = 18;
+
+// console.log(user);
+
+// const HOF = (callback) => {
+//   callback();
+// };
+
+// const consoleLog = () => {
+//   console.log(`fddsfasdas`);
+// };
+
+// HOF(() => {
+//   console.log(`fddsfasdas`);
+// });
+
+// [1, 2, 3, 4, 5].map((el, index, array) => {})
+
+// const obj = { key: 'value' };
+
+// const freezedObj = Object.freeze(obj);
+
+// console.log(obj === freezedObj);
+
+// obj.city = 'Lviv';
+
+// console.log(obj);
+
+// let sum = 0;
+
+// let i = 1;
+
+// function calculateSum() {
+//   if (i === 11) {
+//     return sum;
+//   }
+
+//   sum += i;
+
+//   i += 1;
+
+//   calculateSum();
 // }
+
+// debugger;
+
+// calculateSum();
+
+// console.log(sum);
+
+// let a = false;
+
+// let b = a;
+
+// b = true;
+
+// const a = { key: 'value' };
+
+// const b = a;
+
+// b.key = 'key';
+
+// console.log(a.key);
+// console.log(b.key);
+
+// let myString = 'РеГіСтР';
+// // myString = [2, 3, 4, "text", "РеГіСтР" ];
+
+// const fccRegex = /регістР/i;
+
+// let result = fccRegex.test(myString);
+
+// console.log(result);
+
+// function calc() {
+//   let sum = 0;
+
+//   return function () {
+//     return ++sum;
+//   };
+// }
+
+// const funcCalc = calc();
+
+// console.log(funcCalc());
+// console.log(funcCalc());
+// console.log(funcCalc());
+
+// const copyObj = (obj) => ({ ...obj });
+// const copyObj = (obj) => Object.assign({}, obj);
+
+// const user = { name: 'Olena', age: 25 };
+
+// const copiedUser = copyObj(user);
+
+// console.log(copiedUser === user);
+
+// const age = 28;
+// const name = 'Yuliya';
+
+// ('Your age is age. Your name is name');
+
+// // const string = 'Your ' + age + ' is age. Your name is ' + name;
+
+// const string = `Your ${age} is age. Your name is ${name}`;
+
+// console.log(string);
+
+// const PASSWORD = 'ВЛІФВОФІЛДЛВО3289283298ВФДІЛВФІШ'
+
+// const age = 20
+
+// console.log(Boolean(0));
+// console.log(Boolean(-0));
+// console.log(Boolean(''));
+// console.log(Boolean(NaN));
+// console.log(Boolean(null));
+// console.log(Boolean(undefined));
+// console.log(Boolean(false));
+
+// console.log(Boolean(true));
+// console.log(Boolean(-400));
+// console.log(Boolean(' fsfsd '));
+
+// console.log(-0 === 0);
+
+// console.log(true + Number(``));
+
+// console.log(true || false);
+
+// const result = 5 > 7 ? Math.abs() : `Менше`
+
+// console.log(result)
+
+// for (let value of 'вфівфі') {
+//   console.log(value);
+// }
+
+// for (let key in 44) {
+//   console.log(key);
+// }
+
+// const a = 10;
+
+// function foo() {
+//   const b = 20;
+
+//   for (let i = 0; i < 5; i++) {
+//     const c = 30;
+
+//     if (i === 3) {
+//       const d = 40;
+
+//       console.log(a);
+//       console.log(b);
+//       console.log(c);
+//       console.log(d);
+//     }
+//   }
+// }
+
+// foo();
+
+// const getUserWithEmail = (users, email) =>
+//   users.find((user) => user.email === email);
+
+// const getUserWithEmail = (users, email) =>
+//   users.find((user) => user.email === email);
+
+// function func() {
+//   var a = 5;
+// }
+
+// console.log(a);
