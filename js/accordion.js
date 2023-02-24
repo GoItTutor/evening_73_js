@@ -6,12 +6,12 @@
   вміст який до цього елементу відноситься
 */
 
-const btnEls = document.querySelectorAll('.js-accordion-btn');
+// const btnEls = document.querySelectorAll('.js-accordion-btn');
 
-console.log(btnEls);
+// console.log(btnEls);
 
-const handleTogglePanel = (event) => {
-  const panelEl = event.target.nextElementSibling;
+const handleTogglePanel = ({ target }) => {
+  const panelEl = target.nextElementSibling;
 
   panelEl.classList.toggle('closed');
 };
