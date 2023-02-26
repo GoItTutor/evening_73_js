@@ -1,0 +1,20 @@
+.section {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid tomato;
+  color: tomato;
+}
+
+.div {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid green;
+  color: green;
+}
+
+.text {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid blue;
+  color: blue;
+}

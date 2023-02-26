@@ -1,0 +1,23 @@
+.pallet {
+  display: flex;
+  min-height: 100vh;
+}
+
+.pallet__item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-basis: calc(100% / 6);
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.pallet__item-color {
+  display: inline-block;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: auto;
+}

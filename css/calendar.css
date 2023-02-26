@@ -1,0 +1,23 @@
+.calendar {
+  font-size: 20px;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.calendar th,
+.calendar td {
+  border: 1px solid #000000;
+  padding: 10px;
+  text-align: center;
+}
+
+.calendar td {
+  cursor: pointer;
+  transition: all 250ms linear;
+}
+
+.active,
+.calendar td:hover {
+  background-color: #a4b0be;
+  color: #ffffff;
+}
