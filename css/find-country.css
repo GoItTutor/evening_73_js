@@ -1,0 +1,21 @@
+.container {
+  width: 1000px;
+}
+
+.search-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 15px;
+  border: 2px solid #949393;
+  margin-bottom: 20px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: yellowgreen;
+  border-width: 2px;
+}
+
+.country-card__item:not(:last-child) {
+  margin-bottom: 10px;
+}

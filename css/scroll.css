@@ -1,0 +1,15 @@
+.section {
+  font-size: 20px;
+  height: 400px;
+  color: #ffffff;
+  padding: 40px;
+}
+
+.animated-section {
+  transform: translateX(-100%);
+  transition: transform 500ms linear;
+}
+
+.animated-section.active {
+  transform: translateX(0%);
+}
