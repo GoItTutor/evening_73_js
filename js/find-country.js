@@ -39,36 +39,7 @@ const countryCardEl = document.querySelector('.country-card');
 
 const createCountryCard = ({ name, capital, population, area } = {}) => {
   return `<li class="country-card__item"><strong>Страна:</strong> ${name}</li>
-  <li class="country-card__item"><strong>Столица:</strong> ${capital}</li>
-  <li class="country-card__item"><strong>Население:</strong> ${population}</li>
-  <li class="country-card__item"><strong>Площадь:</strong> ${area}км<sup>2</sup></li>`;
+     <li class="country-card__item"><strong>Столица:</strong> ${capital}</li>
+     <li class="country-card__item"><strong>Население:</strong> ${population}</li>
+     <li class="country-card__item"><strong>Площадь:</strong> ${area}км<sup>2</sup></li>`;
 };
-
-const hanleSearchCountry = ({ target }) => {
-  const searchQuery = target.value.toLowerCase().trim();
-
-  if (!searchQuery) {
-    outputError.innerHTML = '';
-    countryCardEl.innerHTML = '';
-
-    return;
-  }
-
-  const foundCountry = countries.find(
-    el => el.name.toLowerCase() === searchQuery
-  );
-
-  if (!foundCountry) {
-    outputError.textContent = 'Такої країни не було знайдено';
-    countryCardEl.innerHTML = '';
-
-    return;
-  }
-
-  outputError.innerHTML = '';
-  countryCardEl.innerHTML = createCountryCard(foundCountry);
-};
-
-const debouncedFunc = _.debounce(hanleSearchCountry, 400);
-
-searchInputEl.addEventListener('input', debouncedFunc);
