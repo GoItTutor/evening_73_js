@@ -43,3 +43,36 @@ const createCountryCard = ({ name, capital, population, area } = {}) => {
      <li class="country-card__item"><strong>Население:</strong> ${population}</li>
      <li class="country-card__item"><strong>Площадь:</strong> ${area}км<sup>2</sup></li>`;
 };
+
+const handleSearchCountry = ({ target }) => {
+  const searchQuery = target.value.toLowerCase().trim();
+
+  console.log(searchQuery);
+
+  if (!searchQuery) {
+    outputError.textContent = '';
+    countryCardEl.textContent = '';
+
+    return;
+  }
+
+  const foundCountry = countries.find(
+    ({ name }) => name.toLowerCase() === searchQuery
+  );
+
+  if (!foundCountry) {
+    outputError.textContent = 'Такої країни не знайдео';
+
+    countryCardEl.innerHTML = '';
+
+    return;
+  }
+
+  countryCardEl.innerHTML = createCountryCard(foundCountry);
+
+  outputError.textContent = '';
+};
+
+const debouncedFunction = _.debounce(handleSearchCountry, 500);
+
+searchInputEl.addEventListener('input', debouncedFunction);
