@@ -1,1 +1,1 @@
-console.log('Hello from index.js');
+'use strict';
