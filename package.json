@@ -1,0 +1,19 @@
+{
+  "name": "evening_73_js",
+  "version": "1.0.0",
+  "description": "- Термінал",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autoprefixer": "npx postcss ./src/css/main.css --use autoprefixer -d build/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0"
+  },
+  "browserslist": "last 55 versions"
+}

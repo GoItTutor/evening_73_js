@@ -1,3 +1,6 @@
-/* .title {
+.title {
   color: tomato;
-} */
+  display: grid;
+  gap: 15px;
+  background-color: color-mix(in srgb, blue 10%, white);
+}
