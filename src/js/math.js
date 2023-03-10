@@ -1,17 +1,19 @@
 'use strict';
 
-const add = (a, b) => {
+export const add = (a, b) => {
   return a + b;
 };
 
-const sub = (a, b) => {
+export const sub = (a, b) => {
   return a - b;
 };
 
-const division = (a, b) => {
+export const division = (a, b) => {
   return a / b;
 };
 
-const multi = (a, b) => {
+export const multi = (a, b) => {
   return a * b;
 };
+
+export default { add, sub, division };
